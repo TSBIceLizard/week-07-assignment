@@ -1,0 +1,3 @@
+-- Schema visualiser screenshot
+-- SQL queries from our editor on Supabase
+-- This is not a functional file. Just for Reference!
