@@ -31,7 +31,7 @@ app.get("/games", async (req, res) => {
   try {
     //Query the game list
     const queryGames = await db.query(
-      `SELECT game_name, genre, box_art, alias FROM game_title`
+      `SELECT id, game_name, genre, box_art, alias FROM game_title`
     );
     res.json(queryGames.rows);
   } catch (error) {
