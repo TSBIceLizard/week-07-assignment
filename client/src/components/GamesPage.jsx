@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import GamePageItem from "./GamesPageItem";
 import "./GamesPage.css";
 // import { Outlet, useSearchParams, Link } from "react-router";
-import { Link } from "react-router";
+import { Outlet, Link, href } from "react-router";
 
 export default function GamesPage() {
   const [gameItems, setGameItems] = useState([]);
@@ -24,7 +24,9 @@ export default function GamesPage() {
         <h2>Games</h2>
         <div className="line_one">
           {gameItems.map((gameItem) => (
-            <Link to={`/${gameItem.alias}`}>
+            <Link
+              to={href("/games/:gametitle", { gametitle: `${gameItem.alias}` })}
+            >
               <GamePageItem
                 imgsrc={gameItem.box_art}
                 gameName={gameItem.game_name}
