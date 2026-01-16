@@ -1,0 +1,21 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 4rem;
+  margin-top: 6rem;
+  margin-right: 40rem;
+  margin-bottom: 8rem;
+  padding: 1.5rem;
+  padding-bottom: 4rem;
+  font-size: 4rem;
+  border-top: solid;
+  border-bottom: solid;
+}
+
+a {
+  color: gold;
+}
+
+a:hover {
+  color: rgb(255, 255, 192);
+}
