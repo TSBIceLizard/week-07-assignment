@@ -1,0 +1,11 @@
+figure {
+  border-style: groove;
+  border-color: darkgoldenrod;
+  img {
+    max-width: 282px;
+    max-height: 352px;
+  }
+  p {
+    text-align: center;
+  }
+}
