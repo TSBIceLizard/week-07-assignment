@@ -53,7 +53,7 @@ app.get("/gamesdetaildoom3", async (req, res) => {
   } catch (error) {
     console.error(
       error,
-      "Couldn't GET response for the /games route. Something went wrong here."
+      "Couldn't GET response for the /gamesdetaildoom3 route. Something went wrong here."
     );
     res.status(500).json({ response: "Failed" });
   }
@@ -69,7 +69,7 @@ app.get("/gamesdetaildiablo2", async (req, res) => {
   } catch (error) {
     console.error(
       error,
-      "Couldn't GET response for the /games route. Something went wrong here."
+      "Couldn't GET response for the /gamesdetaildiablo2 route. Something went wrong here."
     );
     res.status(500).json({ response: "Failed" });
   }
