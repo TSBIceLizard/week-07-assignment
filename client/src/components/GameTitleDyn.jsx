@@ -1,80 +1,39 @@
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
+import "./GameTitleDyn.css";
 
 export default function GameTitleDyn() {
   let { gametitle } = useParams();
 
-  // const [gameSelectd3, setGameSelectd3] = useState([]);
-  // const [gameSelectdib2, setGameSelectdib2] = useState([]);
   const [currentGamePage, setCurrentGamePage] = useState([]);
-  // const [gameName, setGameName] = useState(null);
-  // const [genreGet, setGenreGet] = useState(null);
-  // const [releaseDateGet, setReleaseDateGet] = useState(null);
-  // const [synopsisGet, setSynopsisGet] = useState(null);
-  // const [boxArtGet, setBoxArtGet] = useState(null);
-
-  // Prepare for some really hideous code so we can check which dynamic route game we're on
-  // if (gametitle == currentGamePage[0].alias) {
-  //   setGameName(currentGamePage[0].game_name);
-  //   setGenreGet(currentGamePage[0].genre);
-  //   setReleaseDateGet(currentGamePage[0].release_date);
-  //   setSynopsisGet(currentGamePage[0].synopsisGet);
-  //   setBoxArtGet(currentGamePage[0].box_art);
-  // } else if (gametitle == currentGamePage[1].alias) {
-  //   setGameName(currentGamePage[1].game_name);
-  //   setGenreGet(currentGamePage[1].genre);
-  //   setReleaseDateGet(currentGamePage[1].release_date);
-  //   setSynopsisGet(currentGamePage[1].synopsisGet);
-  //   setBoxArtGet(currentGamePage[1].box_art);
-  // }
-  // That didn't work, need to refactor
 
   useEffect(() => {
-    async function fetchGamesList() {
-      const gamesListResponse = await fetch(
-        `https://week-07-assignment-ggd2.onrender.com/games/${gametitle}`
+    async function fetchGameIndivid() {
+      const gamesIndividResponse = await fetch(
+        `https://week-07-assignment-ggd2.onrender.com/gamesdetail${gametitle}`
       );
-      const loadGameListData = await gamesListResponse.json();
-      console.log(loadGameListData);
-      setCurrentGamePage(loadGameListData);
+      const loadGameIndividData = await gamesIndividResponse.json();
+      console.log(loadGameIndividData);
+      setCurrentGamePage(loadGameIndividData);
     }
-    fetchGamesList();
-  }, []);
+    fetchGameIndivid();
+  }, [gametitle]);
 
-  // useEffect(() => {
-  //   async function fetchGamesDetailDoom3() {
-  //     const gameResponse = await fetch(
-  //       "https://week-07-assignment-ggd2.onrender.com/gamesdetaildoom3"
-  //     );
-  //     const loadDetailGameD3Data = await gameResponse.json();
-  //     console.log(loadDetailGameD3Data);
-  //     setGameSelectd3(loadDetailGameD3Data);
-  //   }
-  //   fetchGamesDetailDoom3();
-  // }, []);
-
-  // useEffect(() => {
-  //   async function fetchGamesDetailDiablo2() {
-  //     const gameResponse = await fetch(
-  //       "https://week-07-assignment-ggd2.onrender.com/gamesdetaildiablo2"
-  //     );
-  //     const loadDetailGameData = await gameResponse.json();
-  //     console.log(loadDetailGameData);
-  //     setGameSelectdib2(loadDetailGameData);
-  //   }
-  //   fetchGamesDetailDiablo2();
-  // }, []);
+  // This page only renders occasionally?! WHY! My first suspicion was that the API on render was losing connection but that's not the case!
 
   return (
     <>
-      <div>
-        <p>
-          <img src={boxArtGet} />
-        </p>
-        <h2>{gameName}</h2>
-        <h3>{genreGet}</h3>
-        <h3>Release Date: {releaseDateGet}</h3>
-        <p>{synopsisGet}</p>
+      <div className="gamespage_individual_div">
+        <div className="focus_piece">
+          <img
+            src={currentGamePage[0].box_art}
+            alt={currentGamePage[0].game_name}
+          />
+          <h2>{currentGamePage[0].game_name}</h2>
+          <h3>{currentGamePage[0].genre}</h3>
+          <h3>Release Date: {currentGamePage[0].release_date}</h3>
+        </div>
+        <p>{currentGamePage[0].synopsis}</p>
       </div>
     </>
   );

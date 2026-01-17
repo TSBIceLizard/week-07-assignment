@@ -21,9 +21,8 @@ export default function App() {
         <Route element={<HomePage />} path={"/"} />
         {/* <Route element={<HomePage />} path={"/home"} /> */}
         <Route element={<AboutPage />} path={"/about"} />
-        <Route element={<GamesPage />} path={"/games"}>
-          <Route element={<GameTitleDyn />} path={":gametitle"} />
-        </Route>
+        <Route element={<GamesPage />} path={"/games"} />
+        <Route element={<GameTitleDyn />} path={"/games/:gametitle"} />
         <Route element={<ContactPage />} path={"/contact"} />
         <Route element={<LinksPage />} path={"/links"} />
       </Routes>

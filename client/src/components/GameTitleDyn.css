@@ -1,0 +1,37 @@
+.gamespage_individual_div {
+  margin: 4rem;
+  padding: 2rem;
+  border-style: groove;
+  border-color: darkgoldenrod;
+  margin-left: 12rem;
+  margin-right: 48rem;
+}
+
+.focus_piece {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  border-style: groove;
+  border-color: darkgoldenrod;
+  img {
+    align-self: center;
+    max-width: 384px;
+    max-height: auto;
+  }
+  h2 {
+    text-align: center;
+  }
+  h3 {
+    text-align: center;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 2rem;
+  margin-bottom: 3rem;
+}
+
+p {
+  font-size: 1.5rem;
+}
