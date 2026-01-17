@@ -31,7 +31,7 @@ app.get("/games", async (req, res) => {
   try {
     //Query the game list
     const queryGames = await db.query(
-      `SELECT id, game_name, genre, box_art, alias FROM game_title`
+      `SELECT id, game_name, genre, synopsis, release_date, box_art, alias FROM game_title`
     );
     res.json(queryGames.rows);
   } catch (error) {
@@ -43,4 +43,35 @@ app.get("/games", async (req, res) => {
   }
 });
 
+app.get("/gamesdetaildoom3", async (req, res) => {
+  try {
+    //Query the game list
+    const queryGames = await db.query(
+      `SELECT id, game_name, genre, synopsis, release_date, box_art, alias FROM game_title WHERE alias = 'doom3'`
+    );
+    res.json(queryGames.rows);
+  } catch (error) {
+    console.error(
+      error,
+      "Couldn't GET response for the /games route. Something went wrong here."
+    );
+    res.status(500).json({ response: "Failed" });
+  }
+});
+
+app.get("/gamesdetaildiablo2", async (req, res) => {
+  try {
+    //Query the game list
+    const queryGames = await db.query(
+      `SELECT id, game_name, genre, synopsis, release_date, box_art, alias FROM game_title WHERE alias = 'diablo2'`
+    );
+    res.json(queryGames.rows);
+  } catch (error) {
+    console.error(
+      error,
+      "Couldn't GET response for the /games route. Something went wrong here."
+    );
+    res.status(500).json({ response: "Failed" });
+  }
+});
 //Remember to store your secrets in the .env file!
