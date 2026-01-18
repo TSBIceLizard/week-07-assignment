@@ -8,6 +8,7 @@ import GamesPage from "./components/GamesPage.jsx";
 import ContactPage from "./components/ContactPage.jsx";
 import LinksPage from "./components/LinksPage.jsx";
 import GameTitleDyn from "./components/GameTitleDyn.jsx";
+import SubmitReviewPage from "./components/SubmitReviewPage.jsx";
 
 //TODO: Set up a routing system and import the relevant components
 //note: Advised to have a component for my root route
@@ -23,6 +24,7 @@ export default function App() {
         <Route element={<AboutPage />} path={"/about"} />
         <Route element={<GamesPage />} path={"/games"} />
         <Route element={<GameTitleDyn />} path={"/games/:gametitle"} />
+        <Route element={<SubmitReviewPage />} path={"/reviewsubmit"} />
         <Route element={<ContactPage />} path={"/contact"} />
         <Route element={<LinksPage />} path={"/links"} />
       </Routes>

@@ -14,6 +14,9 @@ export default function NavBar() {
         <Link className="link_class" to={"/games"}>
           Games
         </Link>
+        <Link className="link_class" to={"/reviewsubmit"}>
+          Submit
+        </Link>
         <Link className="link_class" to={"/contact"}>
           Contact
         </Link>
