@@ -1,0 +1,7 @@
+figure {
+  border-style: groove;
+  border-color: darkgoldenrod;
+  h3 {
+    text-align: center;
+  }
+}
