@@ -103,5 +103,6 @@ app.post("/reviewssubmit", (req, res) => {
       newReviewEntry.review_target,
     ],
   );
+  res.json({ status: "submission success", values: newReviewEntry });
 });
 //Remember to store your secrets in the .env file!
