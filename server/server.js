@@ -74,4 +74,18 @@ app.get("/gamesdetaildiablo2", async (req, res) => {
     res.status(500).json({ response: "Failed" });
   }
 });
+
+app.post("/reviewssubmit", (req, res) => {
+  const newReviewEntry = req.body.formValues;
+  console.log(newReviewEntry);
+  const query = db.query(
+    `INSERT INTO game_reviews (author, review_content, score, review_target) VALUES ($1, $2, $3, $4)`,
+    [
+      newReviewEntry.author,
+      newReviewEntry.reviewcontent,
+      newReviewEntry.score,
+      newReviewEntry.reviewtarget,
+    ]
+  );
+});
 //Remember to store your secrets in the .env file!
