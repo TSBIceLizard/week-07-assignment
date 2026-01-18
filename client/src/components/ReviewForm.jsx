@@ -32,7 +32,14 @@ export default function ReviewForm() {
           <fieldset>
             <legend>Your review</legend>
             <label for="reviewcontent">Your thoughts on this title:</label>
-            <input type="text" name="reviewcontent" required />
+            <textarea
+              type="text"
+              name="reviewcontent"
+              rows="6"
+              cols="32"
+              className="review_content_class"
+              required
+            />
           </fieldset>
           <fieldset>
             <legend>Your rating</legend>
